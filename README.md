@@ -1,3 +1,25 @@
+![Ovia Inc — Conductor agent workflow concept diagram, from the upstream repository's own assets](docs/assets/images/concepts/ai-agent.svg)
+
+## Ovia Inc — Conductor fork
+
+This repository is a fork of [conductor-oss/conductor](https://github.com/conductor-oss/conductor), held in the Ovia Inc collection for evaluation. Modifications by Ovia Inc: this header (Ovia section, story, and reference note), added November 2026 as part of the import pass that widened the collection beyond the weekly digest. Upstream code and content are otherwise unchanged from the fork point, except where a later commit says so. All credit for the project belongs to the upstream authors and contributors; the licence is Apache-2.0, as recorded in the upstream repository.
+
+### What this is
+
+Conductor is an open-source durable execution platform for microservices, AI agents, and adaptive workflow graphs. It turns runtime choices — loops, branching, fan-out, tool calls, approvals, retries, and cancellation — into durable, inspectable execution: work that survives restarts, waits on humans, and resumes where it stopped. The project originated at Netflix as a microservices orchestrator and is actively maintained by Orkes and the community.
+
+### Story
+
+Agent frameworks answer how an agent decides; they say little about what happens when the work takes three days, a service dies mid-step, or a human must approve before the next move. That second problem — durable execution — is the one production automation actually runs on, and Conductor has carried it since its Netflix years, first for microservices and now for agent workflows as well. The collection's workflow shelf held the deciding layer in depth and the execution layer not at all. We forked conductor-oss/conductor in November 2026 to hold the reference implementation of the durable half: the engine shape against which the studio's managed-operations workflows — scheduling, follow-up, records, approvals — get judged.
+
+### What we evaluate
+
+- The workflow definition model: how loops, branching, fan-out, and human-review steps are expressed, versioned, and inspected while running.
+- Durability behaviour under failure — worker death, retries, cancellation — against the claims the engine makes.
+- The agent integration surface: tool calls and framework workers as workflow steps, with approvals as first-class pauses.
+- Operational weight: what running the engine honestly costs a small team, against managed alternatives.
+
+---
 
 <picture>
   <!-- Dark mode logo -->
